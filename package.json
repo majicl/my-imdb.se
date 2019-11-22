@@ -1,0 +1,8 @@
+{
+  "name": "my-imdb.se",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/majicl/my-imdb.se.git",
+  "author": "Majid Parvin <majid.parvin@comeon.com>",
+  "license": "MIT"
+}
