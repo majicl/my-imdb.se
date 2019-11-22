@@ -1,10 +1,6 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+import React from 'react';
 
-const reloadPage = () => {
-  window.location = "/";
-};
-
-// Basic error catching, should be extended and more fine granular.
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -16,18 +12,17 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, info) {
-    console.group("Error");
-    console.log("Error count: ", errorCount);
-    console.log("Last error date: ", errorTimestamp);
+    console.group('Error');
     console.log(error, info);
     console.groupEnd();
   }
 
   render() {
-    if (this.state.hasError && !this.props.ignoreErrors) {
+    const { ignoreErrors, children } = this.props;
+    if (this.state.hasError && !ignoreErrors) {
       return null;
     }
-    return this.props.children;
+    return children;
   }
 }
 

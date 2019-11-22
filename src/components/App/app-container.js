@@ -1,6 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
 
-export default () => {
-  return <div>!</div>;
-};
+export default () => <div>!</div>;
