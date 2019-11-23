@@ -8,7 +8,9 @@
     "react/destructuring-assignment": "off",
     "jsx-a11y/anchor-is-valid": "warn",
     "comma-dangle": "off",
-    "lines-between-class-members": "off"
+    "lines-between-class-members": "off",
+    "arrow-body-style": "off",
+    "react/jsx-props-no-spreading": "off"
   },
   "globals": {
     "document": "readonly"
