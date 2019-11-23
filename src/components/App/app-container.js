@@ -6,6 +6,6 @@ import Movies from '../Movie/movies';
 export default () => (
   <div>
     <Header />
-    <Movies movies={[1, 2, 3]} />
+    <Movies movies={[1, 2, 3, 5, 5, 5, 5, 5, 2, 5, 5, 5]} />
   </div>
 );

@@ -1,0 +1,14 @@
+.search-term {
+  width: 100%;
+  padding: 5px;
+  height: 45px;
+  outline: none;
+  color: #000;
+}
+
+.search-term:focus {
+  color: rgba(var(--secondry-layout), 1);
+}
+.search-container {
+  padding-top: 10px;
+}
