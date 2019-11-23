@@ -10,9 +10,14 @@
     "comma-dangle": "off",
     "lines-between-class-members": "off",
     "arrow-body-style": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "object-curly-newline": "off",
+    "import/prefer-default-export": "off",
+    "no-restricted-syntax": "off",
+    "arrow-parens": "off"
   },
   "globals": {
-    "document": "readonly"
+    "document": "readonly",
+    "window": "readonly"
   }
 }
