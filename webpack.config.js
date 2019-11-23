@@ -2,15 +2,16 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: './www/index.html',
+  template: './src/index.html',
   filename: './index.html'
 });
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.join(__dirname, 'www'),
-    filename: 'bundle.js'
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -27,7 +28,7 @@ module.exports = {
   },
   devtool: 'cheap-module-eval-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'www')
+    contentBase: path.join(__dirname, 'dist')
   },
   plugins: [htmlPlugin]
 };

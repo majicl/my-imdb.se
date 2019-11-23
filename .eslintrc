@@ -5,7 +5,8 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "prettier/prettier": "error",
     "react/prop-types": "off",
-    "react/destructuring-assignment": "off"
+    "react/destructuring-assignment": "off",
+    "jsx-a11y/anchor-is-valid": "warn"
   },
   "globals": {
     "document": "readonly"

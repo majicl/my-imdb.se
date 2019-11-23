@@ -1,3 +1,9 @@
 import React from 'react';
+import Header from '../Header/Header';
+import './app.scss';
 
-export default () => <div>!</div>;
+export default () => (
+  <div>
+    <Header />
+  </div>
+);
