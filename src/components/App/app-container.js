@@ -1,9 +1,11 @@
 import React from 'react';
-import Header from '../Header/Header';
 import './app.scss';
+import Header from '../Header/Header';
+import Movies from '../Movie/movies';
 
 export default () => (
   <div>
     <Header />
+    <Movies movies={[1, 2, 3]} />
   </div>
 );

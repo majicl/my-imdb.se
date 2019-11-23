@@ -1,4 +1,10 @@
+$secondry-layout: crimson;
+
 header.site-header {
-  height: 100px;
-  background-color: black;
+  height: 60px;
+  border-bottom: 1px solid $secondry-layout;
+  h2 {
+    color: $secondry-layout;
+    margin: 20px;
+  }
 }
