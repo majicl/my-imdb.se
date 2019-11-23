@@ -14,7 +14,8 @@
     "object-curly-newline": "off",
     "import/prefer-default-export": "off",
     "no-restricted-syntax": "off",
-    "arrow-parens": "off"
+    "arrow-parens": "off",
+    "camelcase": "off"
   },
   "globals": {
     "document": "readonly",

@@ -1,13 +1,13 @@
 import React from 'react';
 import './movie-mosaic.scss';
 
-export default ({ title, description, imgUrl }) => (
+export default ({ title, overview, poster_path, imageBaseUrl }) => (
   <div className="movie-mosaic">
-    <img src={imgUrl} alt={title} />
+    <img src={`${imageBaseUrl}/w300${poster_path}`} alt={title} />
     <footer>
       <strong>{title}</strong>
       <div>
-        <span>{description}</span>
+        <p className="overview">{overview}</p>
       </div>
     </footer>
   </div>
