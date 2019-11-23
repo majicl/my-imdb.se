@@ -1,5 +1,17 @@
 .movie-mosaic {
   width: 100%;
   background-color: white;
-  height: 200px;
+  height: 300px;
+  position: relative;
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: crimson;
+    opacity: 0.9;
+    color: white;
+    padding: 5px;
+  }
 }

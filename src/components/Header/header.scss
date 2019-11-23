@@ -2,7 +2,7 @@ $secondry-layout: rgba(var(--secondry-layout), 1);
 
 header.site-header {
   position: relative;
-  height: 70px;
+  height: 80px;
   border-bottom: 1px solid $secondry-layout;
   h2 {
     color: $secondry-layout;
@@ -10,4 +10,18 @@ header.site-header {
     top: 14px;
     left: 20px;
   }
+  @media screen and (max-width: 1544px) {
+    height: 140px;
+    h2 {
+      left: calc(50% - 100px);
+      margin: 0 auto;
+    }
+    .search-container {
+      padding-top: 70px;
+    }
+  }
+}
+
+.search-container {
+  padding-top: 10px;
 }

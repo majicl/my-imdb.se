@@ -1,4 +1,14 @@
 import React from 'react';
 import './movie-mosaic.scss';
 
-export default () => <div className="movie-mosaic">1</div>;
+export default ({ title, description, imgUrl }) => (
+  <div className="movie-mosaic">
+    <img src={imgUrl} alt={title} />
+    <footer>
+      <strong>{title}</strong>
+      <div>
+        <span>{description}</span>
+      </div>
+    </footer>
+  </div>
+);
