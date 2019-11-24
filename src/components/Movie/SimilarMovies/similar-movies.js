@@ -1,7 +1,7 @@
 import React from 'react';
 import './similar-movies.scss';
 import { getSimilarMovies } from '../../../api/movie';
-import Movies from '../movies';
+import Movies from '../Movies/movies';
 
 export default class PopularMovies extends React.Component {
   constructor(props) {

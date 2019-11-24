@@ -1,7 +1,7 @@
 import React from 'react';
-import MovieMosaic from './MovieMosaic/movie-mosaic';
-import config from '../../../config/movie-provider';
-import Loading from '../shared/Loading/loading';
+import MovieMosaic from '../MovieMosaic/movie-mosaic';
+import config from '../../../../config/movie-provider';
+import Loading from '../../shared/Loading/loading';
 import './movies.scss';
 
 export default ({ movies = [], title, loading }) => {
