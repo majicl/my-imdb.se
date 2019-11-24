@@ -9,3 +9,25 @@
 .search-term:focus {
   color: rgba(var(--secondry-layout), 1);
 }
+
+.search-container {
+  position: relative;
+}
+
+.btn-container {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+
+  button {
+    border: 1px solid rgba(var(--secondry-layout), 1);
+    background-color: white;
+    color: rgba(var(--secondry-layout), 1);
+    outline: none;
+
+    &:hover {
+      color: white;
+      background-color: rgba(var(--secondry-layout), 1);
+    }
+  }
+}

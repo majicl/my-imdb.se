@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './header.scss';
-import SearchBox from '../Search/search-box';
+import SearchBox from '../Search/search-box-container';
 
 export default () => (
   <header className="site-header">

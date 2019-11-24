@@ -31,3 +31,11 @@ export const getHighestRatedMovies = async () => {
   );
   return response.json();
 };
+
+export const searchMovies = async query => {
+  // eslint-disable-next-line no-undef
+  const response = await fetch(
+    `${config.baseUrl}/search/movie?api_key=${config.apiKey}&query=${query}`
+  );
+  return response.json();
+};
