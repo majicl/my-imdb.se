@@ -2,7 +2,7 @@ import React from 'react';
 import './movie-mosaic.scss';
 
 export default ({ title, overview, poster_path, imageBaseUrl, id }) => (
-  <a href={`/movie/${id}/${title}`}>
+  <a href={`/movies/m-${id}/${title}`}>
     <div className="movie-mosaic">
       <img src={`${imageBaseUrl}/w300${poster_path}`} alt={title} />
       <footer>

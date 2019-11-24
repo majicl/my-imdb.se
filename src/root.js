@@ -1,13 +1,17 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import AppContainer from './components/App/app-container';
+import Router from './router';
+import Layout from './layout';
+
 import ErrorBoundary from './error-boundary';
 import configureStore from './store/store';
 
 const Root = () => (
   <Provider store={configureStore()}>
     <ErrorBoundary>
-      <AppContainer />
+      <Layout>
+        <Router />
+      </Layout>
     </ErrorBoundary>
   </Provider>
 );

@@ -15,7 +15,8 @@
     "import/prefer-default-export": "off",
     "no-restricted-syntax": "off",
     "arrow-parens": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "react/jsx-fragments": "off"
   },
   "globals": {
     "document": "readonly",
