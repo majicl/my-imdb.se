@@ -4,7 +4,7 @@
 .movies-container {
   padding-top: 15px;
   .no-item {
-    color: crimson;
+    color: rgba(var(--secondry-layout), 1);
     font-size: 22px;
     margin: 14px;
   }

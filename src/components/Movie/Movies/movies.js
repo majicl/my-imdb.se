@@ -23,7 +23,7 @@ export default ({ movies = [], title, loading, paging, onLoadMore }) => {
             </div>
           ))}
         {!loading && movies.length === 0 && (
-          <div className="no-item">There is no movies to display!</div>
+          <div className="no-item">There is no movie to display!</div>
         )}
       </div>
       {paging && (
