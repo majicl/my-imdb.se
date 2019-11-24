@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './movie-details.scss';
-import { getMovie } from '../../api/movie';
-import Header from '../Header/Header';
-import config from '../../../config/movie-provider';
-import Splitter from '../shared/Splitter/Splitter';
-import SimilarMovies from './SimilarMovies/similar-movies';
-import Loading from '../shared/Loading/loading';
+
+import { getMovie } from '../../../api/movie';
+import Header from '../../Header/Header';
+import config from '../../../../config/movie-provider';
+import Splitter from '../../shared/Splitter/Splitter';
+import SimilarMovies from '../SimilarMovies/similar-movies';
+import Loading from '../../shared/Loading/loading';
 
 class MovieDetails extends React.Component {
   constructor(props) {

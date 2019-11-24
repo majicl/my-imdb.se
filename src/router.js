@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import App from './components/App/app-container';
-import MovieDetails from './components/Movie/movie-details';
+import MovieDetails from './components/Movie/MovieDetials/movie-details';
 
 // router management
 export default () => (
