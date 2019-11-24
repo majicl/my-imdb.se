@@ -23,3 +23,11 @@ export const getSimilarMovies = async id => {
   );
   return response.json();
 };
+
+export const getHighestRatedMovies = async () => {
+  // eslint-disable-next-line no-undef
+  const response = await fetch(
+    `${config.baseUrl}/discover/movie/?api_key=${config.apiKey}&sort_by=vote_average.desc`
+  );
+  return response.json();
+};

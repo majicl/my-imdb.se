@@ -1,5 +1,4 @@
 import React from 'react';
-import './similar-movies.scss';
 import { getSimilarMovies } from '../../../api/movie';
 import Movies from '../Movies/movies';
 
