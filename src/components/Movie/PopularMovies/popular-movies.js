@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Movies from './movies';
-import { getPopularMovies } from './state/movie-actions';
+import Movies from '../movies';
+import { getPopularMovies } from '../state/movie-actions';
 
 class PopularMovies extends React.Component {
   componentDidMount() {
