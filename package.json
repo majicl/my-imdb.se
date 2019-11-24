@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --open --hot",
     "lint": "eslint src/**/*.js",
     "build": "webpack --mode=production",
-    "heroku-postbuild": "node ./src/server.js"
+    "heroku-postbuild": "yarn build && node ./src/server.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.4",
