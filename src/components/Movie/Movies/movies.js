@@ -5,7 +5,7 @@ import config from '../../../../config/movie-provider';
 import MovieMosaic from '../MovieMosaic/movie-mosaic';
 import Loading from '../../shared/Loading/loading';
 
-export default ({ movies = [], title, loading }) => {
+export default ({ movies = [], title, loading, paging, onLoadMore }) => {
   return (
     <section className="container movies-container">
       <div className="category-title">
@@ -26,6 +26,13 @@ export default ({ movies = [], title, loading }) => {
           <div className="no-item">There is no movies to display!</div>
         )}
       </div>
+      {paging && (
+        <div className="more-container">
+          <button type="button" onClick={onLoadMore}>
+            More
+          </button>
+        </div>
+      )}
     </section>
   );
 };

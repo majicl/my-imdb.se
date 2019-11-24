@@ -9,15 +9,26 @@ class PopularMovies extends React.Component {
   }
 
   render() {
-    const { movies, loading } = this.props;
-    return <Movies movies={movies} loading={loading} title="Popular movies" />;
+    const { movies, loading, page, dispatch } = this.props;
+    return (
+      <Movies
+        movies={movies}
+        loading={loading}
+        title="Popular movies"
+        onLoadMore={() => {
+          dispatch(getPopularMovies(page + 1));
+        }}
+        paging
+      />
+    );
   }
 }
 const mapStatetoProps = state => {
-  const { list, loading } = state.popularesMovies;
+  const { list, loading, page } = state.popularesMovies;
   return {
     movies: [...list],
-    loading
+    loading,
+    page
   };
 };
 export default connect(mapStatetoProps)(PopularMovies);

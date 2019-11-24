@@ -8,6 +8,18 @@
     font-size: 22px;
     margin: 14px;
   }
+  .more-container {
+    margin: 10px auto;
+    text-align: center;
+
+    button {
+      border: 1px solid rgba(var(--secondry-layout), 1);
+      color: white;
+      background-color: rgba(var(--secondry-layout), 1);
+      outline: none;
+      width: 200px;
+    }
+  }
 }
 .category-title {
   color: white;
