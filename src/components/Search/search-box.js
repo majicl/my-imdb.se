@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './search-box.scss';
 
-export default ({ onSearch, placeholder, query, loading }) => {
+export default ({ onSearch, placeholder, query = '', loading }) => {
   const [keyword, setKeyword] = useState(query);
   return (
     <form

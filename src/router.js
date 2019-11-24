@@ -10,7 +10,7 @@ export default () => (
     <Switch>
       <Route path="/" exact component={App} />
       <Route path="/movies/m-:id/:title" component={MovieDetails} />
-      <Route path="/movies/search/:query" component={SearchResult} />
+      <Route path="/movies/search/:query?" component={SearchResult} />
     </Switch>
   </BrowserRouter>
 );
