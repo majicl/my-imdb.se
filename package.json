@@ -8,10 +8,12 @@
   "scripts": {
     "start": "webpack-dev-server --open --hot",
     "lint": "eslint src/**/*.js",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "heroku-postbuild": "node ./src/server.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.4",
+    "express": "^4.17.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",
