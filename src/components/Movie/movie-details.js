@@ -164,7 +164,7 @@ class MovieDetails extends React.Component {
               )}
             </section>
             <Splitter />
-            <SimilarMovies movieId={this.props.match.params.id} />
+            <SimilarMovies movie={movie} />
           </React.Fragment>
         )}
       </React.Fragment>

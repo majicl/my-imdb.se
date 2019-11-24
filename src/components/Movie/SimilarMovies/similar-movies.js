@@ -15,15 +15,17 @@ export default class PopularMovies extends React.Component {
     await this.updateMovies();
   }
   async componentDidUpdate(prevProps) {
-    if (this.props.movieId !== prevProps.movieId) {
+    if (this.props.movie !== prevProps.movie) {
       await this.updateMovies();
     }
   }
 
   async updateMovies() {
-    this.setState({ loading: true });
-    const json = await getSimilarMovies(this.props.movieId);
-    this.setState({ movies: json.results, loading: false });
+    if (this.props.movie.id) {
+      this.setState({ loading: true });
+      const json = await getSimilarMovies(this.props.movie.id);
+      this.setState({ movies: json.results, loading: false });
+    }
   }
 
   render() {
