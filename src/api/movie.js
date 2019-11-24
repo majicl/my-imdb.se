@@ -15,3 +15,11 @@ export const getMovie = async id => {
   );
   return response.json();
 };
+
+export const getSimilarMovies = async id => {
+  // eslint-disable-next-line no-undef
+  const response = await fetch(
+    `${config.baseUrl}/movie/${id}/recommendations?api_key=${config.apiKey}`
+  );
+  return response.json();
+};

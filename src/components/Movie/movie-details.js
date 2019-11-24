@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './movie-details.scss';
 import { getMovie } from '../../api/movie';
 import Header from '../Header/Header';
 import config from '../../../config/movie-provider';
-import './movie-details.scss';
+import Splitter from '../shared/Splitter/Splitter';
+import SimilarMovies from './SimilarMovies/similar-movies.js';
 
 class MovieDetails extends React.Component {
   constructor(props) {
@@ -12,7 +14,17 @@ class MovieDetails extends React.Component {
       movie: {}
     };
   }
+
   async componentDidMount() {
+    await this.updateMovies();
+  }
+
+  async componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      await this.updateMovies();
+    }
+  }
+  async updateMovies() {
     const movie = await getMovie(this.props.match.params.id);
     this.setState({ movie });
   }
@@ -142,6 +154,8 @@ class MovieDetails extends React.Component {
             </section>
           )}
         </section>
+        <Splitter />
+        <SimilarMovies movieId={this.props.match.params.id} />
       </React.Fragment>
     );
   }

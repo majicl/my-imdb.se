@@ -3,6 +3,11 @@
 }
 .movies-container {
   padding-top: 15px;
+  .no-item {
+    color: crimson;
+    font-size: 22px;
+    margin: 14px;
+  }
 }
 .category-title {
   color: white;

@@ -6,7 +6,7 @@ import './movies.scss';
 export default class Movies extends React.Component {
   componentDidMount() {}
   render() {
-    const { movies = [], title } = this.props;
+    const { movies = [], title, loading } = this.props;
 
     return (
       <section className="container movies-container">
@@ -22,6 +22,9 @@ export default class Movies extends React.Component {
               <MovieMosaic {..._movie} imageBaseUrl={config.imagesBaseUrl} />
             </div>
           ))}
+          {!loading && movies.length === 0 && (
+            <div className="no-item">There is no movies to display!</div>
+          )}
         </div>
       </section>
     );
