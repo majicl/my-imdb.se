@@ -30,4 +30,8 @@
       background-color: rgba(var(--secondry-layout), 1);
     }
   }
+
+  @media screen and (max-width: 1544px) {
+    top: 78px;
+  }
 }
