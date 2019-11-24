@@ -5,10 +5,13 @@ header.site-header {
   height: 80px;
   border-bottom: 1px solid $secondry-layout;
   h2 {
-    color: $secondry-layout;
     position: absolute;
     top: 14px;
     left: 20px;
+    a {
+      color: $secondry-layout;
+      text-decoration: none;
+    }
   }
   @media screen and (max-width: 1544px) {
     height: 140px;

@@ -16,7 +16,8 @@
     "no-restricted-syntax": "off",
     "arrow-parens": "off",
     "camelcase": "off",
-    "react/jsx-fragments": "off"
+    "react/jsx-fragments": "off",
+    "operator-linebreak": "off"
   },
   "globals": {
     "document": "readonly",

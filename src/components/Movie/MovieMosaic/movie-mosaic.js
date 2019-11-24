@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './movie-mosaic.scss';
 
 export default ({ title, overview, poster_path, imageBaseUrl, id }) => (
-  <a href={`/movies/m-${id}/${title}`}>
+  <Link to={`/movies/m-${id}/${title}`}>
     <div className="movie-mosaic">
       <img src={`${imageBaseUrl}/w300${poster_path}`} alt={title} />
       <footer>
@@ -12,5 +13,5 @@ export default ({ title, overview, poster_path, imageBaseUrl, id }) => (
         </div>
       </footer>
     </div>
-  </a>
+  </Link>
 );
