@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './search-box.scss';
 
-export default ({ onSearch, placeholder, query }) => {
+export default ({ onSearch, placeholder, query, loading }) => {
   const [keyword, setKeyword] = useState(query);
   return (
     <form
@@ -17,10 +17,14 @@ export default ({ onSearch, placeholder, query }) => {
           className="search-term"
           placeholder={placeholder}
           onChange={e => setKeyword(e.target.value)}
+          defaultValue={query}
         />
       </div>
       <div className="btn-container">
-        <button type="submit">Search</button>
+        <button type="submit">
+          {loading && <i>wait...</i>}
+          {!loading && <span>Search</span>}
+        </button>
       </div>
     </form>
   );

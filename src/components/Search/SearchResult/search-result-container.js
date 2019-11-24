@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Movies from '../../Movie/Movies/movies';
+import Header from '../../Header/Header';
 import { search } from '../state/search-actions';
 
 class SearchResult extends React.Component {
@@ -20,11 +21,15 @@ class SearchResult extends React.Component {
   render() {
     const { movies, loading } = this.props;
     return (
-      <Movies
-        movies={movies}
-        loading={loading}
-        title={`Search Result (${this.props.match.params.query})`}
-      />
+      <React.Fragment>
+        <Header />
+        <Movies
+          movies={movies}
+          loading={loading}
+          titl
+          e={`Search Result (${this.props.match.params.query})`}
+        />
+      </React.Fragment>
     );
   }
 }

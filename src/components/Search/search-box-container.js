@@ -7,14 +7,19 @@ const SearchBoxContainer = props => {
   const onSearchHandler = value => {
     props.history.push(`/movies/search/${value}`);
   };
-  return <SearchBox {...props} onSearch={onSearchHandler} />;
+  return (
+    <SearchBox
+      {...props}
+      onSearch={onSearchHandler}
+      query={props.match.params.query}
+    />
+  );
 };
 
 const mapStatetoProps = state => {
-  const { query, loading } = state.search || {};
+  const { loading } = state.search || {};
   return {
-    loading,
-    query
+    loading
   };
 };
 export default withRouter(connect(mapStatetoProps)(SearchBoxContainer));
