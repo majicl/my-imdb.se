@@ -6,10 +6,7 @@
   "author": "Majid Parvin <majid.parvin@comeon.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --open --hot",
-    "lint": "eslint src/**/*.js",
-    "build": "webpack --mode=production",
-    "heroku-postbuild": "yarn build && node ./src/server.js"
+    "start": "yarn build && node ./src/server.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.4",
