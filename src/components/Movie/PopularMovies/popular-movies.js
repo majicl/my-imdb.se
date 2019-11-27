@@ -9,7 +9,7 @@ import {
 
 class PopularMovies extends React.Component {
   componentDidMount() {
-    this.props.dispatch(getPopularMovies());
+    if (this.props.movies.length === 0) this.props.dispatch(getPopularMovies());
   }
 
   render() {
