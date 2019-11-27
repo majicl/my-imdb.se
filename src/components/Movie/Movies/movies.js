@@ -5,7 +5,17 @@ import config from '../../../../config/movie-provider';
 import MovieMosaic from '../MovieMosaic/movie-mosaic';
 import Loading from '../../shared/Loading/loading';
 
-export default ({ movies = [], title, loading, paging, onLoadMore }) => {
+export default ({
+  movies = [],
+  title,
+  loading,
+  paging,
+  onLoadMore,
+  favorites = [],
+  watchLater = [],
+  toggleFav,
+  toggleList
+}) => {
   return (
     <section className="container movies-container">
       <div className="category-title">
@@ -16,10 +26,19 @@ export default ({ movies = [], title, loading, paging, onLoadMore }) => {
         {!loading &&
           movies.map(_movie => (
             <div
-              key={_movie.id}
+              key={title + _movie.id}
               className="col-lg-3 col-md-3 col-sm-4 movie-container"
             >
-              <MovieMosaic {..._movie} imageBaseUrl={config.imagesBaseUrl} />
+              <MovieMosaic
+                {..._movie}
+                imageBaseUrl={config.imagesBaseUrl}
+                favorites={favorites}
+                watchLater={watchLater}
+                isFav={favorites.includes(_movie.id)}
+                isInMyList={watchLater.includes(_movie.id)}
+                toggleFav={toggleFav}
+                toggleList={toggleList}
+              />
             </div>
           ))}
         {!loading && movies.length === 0 && (

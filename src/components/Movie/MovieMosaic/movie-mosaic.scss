@@ -9,6 +9,32 @@
     width: 100%;
   }
 
+  .fav {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+  }
+  .list {
+    position: absolute;
+    top: 24px;
+    right: 4px;
+
+    div {
+      font-size: 20px;
+      height: 20px;
+      width: 20px;
+      line-height: 15px;
+      border: 1px solid;
+      text-align: center;
+      &:hover {
+        background-color: white;
+      }
+    }
+    div.rm {
+      background-color: white;
+    }
+  }
+
   footer {
     position: absolute;
     bottom: 0;
