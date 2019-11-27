@@ -8,6 +8,7 @@ header.site-header {
     position: absolute;
     top: 14px;
     left: 20px;
+    z-index: 100;
     a {
       color: $secondry-layout;
       text-decoration: none;
