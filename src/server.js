@@ -1,22 +1,12 @@
-const path = require('path');
-const express = require('express');
-const fs = require('fs');
+const http = require('http');
+const port = process.env.PORT || 3000
 
-const app = express();
-
-app.get('/', (req, res) => {
-  fs.readFile(
-    path.join(__dirname, '../dist/index.html'),
-    'utf8',
-    (err, text) => {
-      res.send(text);
-    }
-  );
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/html');
+  res.end('<h1>Hello World</h1>');
 });
-app.use('*/dist', express.static(path.join(__dirname, '../dist')));
 
-app.set('port', process.env.PORT || 8080);
-
-const server = app.listen(app.get('port'), () => {
-  console.log('listening on port: ', server.address().port);
+server.listen(port,() => {
+  console.log(`Server running at port `+ port);
 });
