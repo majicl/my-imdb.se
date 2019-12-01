@@ -8,7 +8,7 @@ module.exports = {
   transform: {
     '^.+\\.js$': 'babel-jest'
   },
-  testMatch: ['**/test/**/*.[jt]s?(x)'],
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)'],
   testURL: 'http://localhost',
   moduleNameMapper: {
     '~(.*)$': '<rootDir>/src/$1',
