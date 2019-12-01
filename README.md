@@ -9,7 +9,7 @@ In the project directory, you can run:
 It is used to install all dependencies for a project.<br />
 **It is necessary to run before staring the app**.
 
-### `yarn start`
+### `yarn dev`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3007](http://localhost:3007) to view it in the browser.
