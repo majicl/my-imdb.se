@@ -28,6 +28,7 @@ class PopularMovies extends React.Component {
         watchLater={watchLater}
         loading={loading}
         title="Popular movies"
+        actionButtonAvailable
         onLoadMore={() => {
           dispatch(getPopularMovies(page + 1));
         }}

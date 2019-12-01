@@ -21,7 +21,7 @@ export default ({ onSearch, placeholder, query = '', loading }) => {
         />
       </div>
       <div className="btn-container">
-        <button type="submit">
+        <button type="submit" disabled={!keyword}>
           {loading && <i>wait...</i>}
           {!loading && <span>Search</span>}
         </button>

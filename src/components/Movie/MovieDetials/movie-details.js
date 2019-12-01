@@ -12,6 +12,7 @@ import {
   toggleFavorites,
   toggleMyList
 } from '../../Account/state/account-actions';
+
 class MovieDetails extends React.Component {
   constructor(props) {
     super(props);
@@ -152,13 +153,13 @@ class MovieDetails extends React.Component {
                   )}
                   <div
                     onClick={() => {
-                      this.props.dispatch(toggleFavorites(id));
+                      this.props.dispatch(toggleFavorites(this.state.movie));
                     }}
                     aria-labelledby=""
                     role="img"
                     className="fav"
                   >
-                    {!favorites.includes(id) ? (
+                    {!favorites.some(_ => _.id === id) ? (
                       <span
                         role="img"
                         title="Add to your favorite list"
@@ -178,13 +179,13 @@ class MovieDetails extends React.Component {
                   </div>
                   <div
                     onClick={() => {
-                      this.props.dispatch(toggleMyList(id));
+                      this.props.dispatch(toggleMyList(this.state.movie));
                     }}
                     aria-labelledby=""
                     role="img"
                     className="list"
                   >
-                    {!watchLater.includes(id) ? (
+                    {!watchLater.some(_ => _.id === id) ? (
                       <div
                         role="img"
                         title="Add to your list"

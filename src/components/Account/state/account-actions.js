@@ -2,14 +2,14 @@ import types from './account-types';
 
 const { TOGGLE_FAVORITES, TOGGLE_MY_LIST } = types;
 
-export const toggleFavorites = movieId => {
+export const toggleFavorites = movie => {
   return (dispatch, getState) => {
     const currentList = getState().account.favorites;
     let newList;
-    if (currentList.includes(movieId)) {
-      newList = currentList.filter(_ => _ !== movieId);
+    if (currentList.some(_ => _.id === movie.id)) {
+      newList = currentList.filter(_ => _.id !== movie.id);
     } else {
-      newList = [...currentList, movieId];
+      newList = [...currentList, movie];
     }
     return dispatch({
       type: TOGGLE_FAVORITES,

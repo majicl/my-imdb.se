@@ -14,7 +14,8 @@ export default ({
   favorites = [],
   watchLater = [],
   toggleFav,
-  toggleList
+  toggleList,
+  actionButtonAvailable = false
 }) => {
   return (
     <section className="container movies-container">
@@ -30,14 +31,15 @@ export default ({
               className="col-lg-3 col-md-3 col-sm-4 movie-container"
             >
               <MovieMosaic
-                {..._movie}
+                movie={_movie}
                 imageBaseUrl={config.imagesBaseUrl}
                 favorites={favorites}
                 watchLater={watchLater}
-                isFav={favorites.includes(_movie.id)}
-                isInMyList={watchLater.includes(_movie.id)}
+                isFav={favorites.some(_ => _.id === _movie.id)}
+                isInMyList={watchLater.some(_ => _.id === _movie.id)}
                 toggleFav={toggleFav}
                 toggleList={toggleList}
+                actionButtonAvailable={actionButtonAvailable}
               />
             </div>
           ))}
