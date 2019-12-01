@@ -6,7 +6,9 @@
   "author": "Majid Parvin <majid.parvin@comeon.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node ./src/server.js"
+    "dev": "webpack-dev-server --open --hot",
+    "lint": "eslint src/**/*.js",
+    "start": "webpack --mode=production && node ./src/server.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.4",
