@@ -20,8 +20,8 @@ export default React.memo(
           <img src={`${imageBaseUrl}/w300${poster_path}`} alt={title} />
           {actionButtonAvailable && (
             <React.Fragment>
-              {' '}
               <div
+                data-at="favorite-icon"
                 onClick={e => {
                   e.preventDefault();
                   e.stopPropagation();
