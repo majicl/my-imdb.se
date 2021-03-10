@@ -7,7 +7,7 @@ const INITIAL_STATE = {
   favorites: [],
   watchLater: [],
   displayName: 'Majid',
-  authencticated: true
+  authencticated: true,
 };
 
 const reducers = {
@@ -16,7 +16,7 @@ const reducers = {
   },
   [TOGGLE_MY_LIST]: (state, action) => {
     return { ...state, watchLater: action.watchLater };
-  }
+  },
 };
 
 export default handleActions(INITIAL_STATE, reducers);

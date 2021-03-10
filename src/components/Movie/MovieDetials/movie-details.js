@@ -8,17 +8,14 @@ import config from '../../../../config/movie-provider';
 import Splitter from '../../shared/Splitter/Splitter';
 import SimilarMovies from '../SimilarMovies/similar-movies';
 import Loading from '../../shared/Loading/loading';
-import {
-  toggleFavorites,
-  toggleMyList
-} from '../../Account/state/account-actions';
+import { actionCreator } from '../../Account/state/account-actions';
 
 class MovieDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       movie: {},
-      loading: false
+      loading: false,
     };
   }
 
@@ -53,9 +50,9 @@ class MovieDetails extends React.Component {
         spoken_languages,
         imdb_id,
         id,
-        overview
+        overview,
       },
-      loading
+      loading,
     } = this.state;
     const { watchLater, favorites } = this.props;
     return (
@@ -108,14 +105,16 @@ class MovieDetails extends React.Component {
                   {genres && (
                     <div>
                       <h3>Genres:</h3>
-                      <p>{genres.map(_ => _.name).join(', ')}</p>
+                      <p>{genres.map((_) => _.name).join(', ')}</p>
                     </div>
                   )}
 
                   {production_countries && (
                     <div>
                       <h3>Countries:</h3>
-                      <p>{production_countries.map(_ => _.name).join(', ')}</p>
+                      <p>
+                        {production_countries.map((_) => _.name).join(', ')}
+                      </p>
                     </div>
                   )}
 
@@ -136,7 +135,7 @@ class MovieDetails extends React.Component {
                         {new Date(release_date).toLocaleDateString('en-US', {
                           year: 'numeric',
                           month: 'long',
-                          day: 'numeric'
+                          day: 'numeric',
                         })}
                       </p>
                     </div>
@@ -146,20 +145,20 @@ class MovieDetails extends React.Component {
                       <h3>Spoken Language(s):</h3>
                       <p>
                         {spoken_languages
-                          .map(spoken_language => spoken_language.name)
+                          .map((spoken_language) => spoken_language.name)
                           .join(', ')}
                       </p>
                     </div>
                   )}
                   <div
                     onClick={() => {
-                      this.props.dispatch(toggleFavorites(this.state.movie));
+                      this.props.toggleFavorites(this.state.movie);
                     }}
                     aria-labelledby=""
                     role="img"
                     className="fav"
                   >
-                    {!favorites.some(_ => _.id === id) ? (
+                    {!favorites.some((_) => _.id === id) ? (
                       <span
                         role="img"
                         title="Add to your favorite list"
@@ -179,13 +178,13 @@ class MovieDetails extends React.Component {
                   </div>
                   <div
                     onClick={() => {
-                      this.props.dispatch(toggleMyList(this.state.movie));
+                      this.props.toggleMyList(this.state.movie);
                     }}
                     aria-labelledby=""
                     role="img"
                     className="list"
                   >
-                    {!watchLater.some(_ => _.id === id) ? (
+                    {!watchLater.some((_) => _.id === id) ? (
                       <div
                         role="img"
                         title="Add to your list"
@@ -244,8 +243,8 @@ class MovieDetails extends React.Component {
   }
 }
 
-const mapStatetoProps = state => {
+const mapStatetoProps = (state) => {
   const { favorites, watchLater } = state.account;
   return { favorites, watchLater };
 };
-export default connect(mapStatetoProps)(MovieDetails);
+export default connect(mapStatetoProps, actionCreator)(MovieDetails);
