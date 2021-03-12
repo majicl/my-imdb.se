@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './movie-mosaic.scss';
 
 export default React.memo(
-  props => {
+  (props) => {
     const {
       isFav,
       toggleFav,
@@ -11,18 +11,18 @@ export default React.memo(
       isInMyList,
       movie,
       imageBaseUrl,
-      actionButtonAvailable
+      actionButtonAvailable,
     } = props;
     const { title, overview, poster_path, id } = movie;
     return (
-      <Link to={`/movies/m-${id}/${title}`}>
+      <Link to={`/movies/m-${id}/${encodeURI(title)}`}>
         <div className="movie-mosaic">
           <img src={`${imageBaseUrl}/w300${poster_path}`} alt={title} />
           {actionButtonAvailable && (
             <React.Fragment>
               <div
                 data-at="favorite-icon"
-                onClick={e => {
+                onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
                   toggleFav(movie);
@@ -50,7 +50,7 @@ export default React.memo(
                 )}
               </div>
               <div
-                onClick={e => {
+                onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
                   toggleList(movie);
