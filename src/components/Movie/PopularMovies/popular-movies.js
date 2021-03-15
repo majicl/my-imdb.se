@@ -4,7 +4,7 @@ import Movies from '../Movies/movies';
 import { getPopularMovies } from '../state/movie-actions';
 import {
   toggleFavorites,
-  toggleMyList
+  toggleMyList,
 } from '../../Account/state/account-actions';
 
 class PopularMovies extends React.Component {
@@ -19,7 +19,7 @@ class PopularMovies extends React.Component {
       page,
       dispatch,
       favorites,
-      watchLater
+      watchLater,
     } = this.props;
     return (
       <Movies
@@ -32,10 +32,10 @@ class PopularMovies extends React.Component {
         onLoadMore={() => {
           dispatch(getPopularMovies(page + 1));
         }}
-        toggleFav={movieId => {
+        toggleFav={(movieId) => {
           dispatch(toggleFavorites(movieId));
         }}
-        toggleList={movieId => {
+        toggleList={(movieId) => {
           dispatch(toggleMyList(movieId));
         }}
         paging
@@ -43,7 +43,7 @@ class PopularMovies extends React.Component {
     );
   }
 }
-const mapStatetoProps = state => {
+const mapStatetoProps = (state) => {
   const { list, loading, page } = state.popularesMovies;
   const { favorites, watchLater } = state.account;
   return {
@@ -51,7 +51,7 @@ const mapStatetoProps = state => {
     loading,
     page,
     favorites,
-    watchLater
+    watchLater,
   };
 };
 export default connect(mapStatetoProps)(PopularMovies);

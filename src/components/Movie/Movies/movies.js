@@ -15,7 +15,7 @@ export default ({
   watchLater = [],
   toggleFav,
   toggleList,
-  actionButtonAvailable = false
+  actionButtonAvailable = false,
 }) => {
   return (
     <section className="container movies-container">
@@ -25,7 +25,7 @@ export default ({
       <div className="row">
         {loading && <Loading />}
         {!loading &&
-          movies.map(_movie => (
+          movies.map((_movie) => (
             <div
               key={title + _movie.id}
               className="col-lg-3 col-md-3 col-sm-4 movie-container"
@@ -35,8 +35,8 @@ export default ({
                 imageBaseUrl={config.imagesBaseUrl}
                 favorites={favorites}
                 watchLater={watchLater}
-                isFav={favorites.some(_ => _.id === _movie.id)}
-                isInMyList={watchLater.some(_ => _.id === _movie.id)}
+                isFav={favorites.some((_) => _.id === _movie.id)}
+                isInMyList={watchLater.some((_) => _.id === _movie.id)}
                 toggleFav={toggleFav}
                 toggleList={toggleList}
                 actionButtonAvailable={actionButtonAvailable}

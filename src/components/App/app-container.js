@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import PopularMovies from '../Movie/PopularMovies/popular-movies';
 import HighestRatedMovies from '../Movie/HighestRatedMovies/highest-rated-movies';
 import Splitter from '../shared/Splitter/Splitter';
+import MyFavPop from '../Movie/MyFavs/my-favs';
 
 export default () => {
   return (
@@ -12,6 +13,8 @@ export default () => {
       <PopularMovies />
       <Splitter />
       <HighestRatedMovies />
+      <Splitter />
+      <MyFavPop />
     </div>
   );
 };
