@@ -46,7 +46,7 @@
     "eslint-plugin-react": "^7.22.0",
     "html-webpack-plugin": "^5.3.1",
     "jest": "^26.6.3",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "prettier": "^2.2.1",
     "redux-responsive": "^4.3.8",
     "sass-loader": "^11.0.1",
